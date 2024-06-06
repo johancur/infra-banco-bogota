@@ -4,14 +4,12 @@ on:
   push:
     branches:
       - main
-
+permissions:
+      id-token: write   # This is required for requesting the JWT
+      contents: read  
 jobs:
   terraform:
     runs-on: ubuntu-latest
-    name: auth
-    permissions:
-          id-token: write
-          contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
