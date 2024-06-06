@@ -1,6 +1,6 @@
 name: Terraform CI/CD
 
-on:
+on:   
   push:
     branches:
       - main
@@ -8,8 +8,12 @@ permissions:
       id-token: write   # This is required for requesting the JWT
       contents: read  
 jobs:
-  terraform:
+  authenticate:
+    name: auth
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
