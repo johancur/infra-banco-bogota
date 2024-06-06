@@ -1,0 +1,5 @@
+stack_id = "dev"
+layer = "xxx"
+type = "infra"
+component_name = "core"
+region = "us-east-1"
