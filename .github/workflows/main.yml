@@ -8,6 +8,10 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+    name: auth
+    permissions:
+          id-token: write
+          contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
